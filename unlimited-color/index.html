@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Color Changer</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Start to change color every second</h1>
+        <button id="start">Start</button>
+        <button id="stop">Stop</button>
+    </div>
+
+</body>
+<script>
+    const hexColor = function(){
+        const hex = '0123456789ABCDEF';
+        let color = '#';
+        for( let i = 0;i < 6;i++){
+            color += hex[Math.floor(Math.random() * 16)];
+        }
+        return color;
+    }
+    const start = document.getElementById('start');
+    const stopper = document.getElementById('stop');
+    let intervalId;
+    start.addEventListener('click',(e)=>{
+        if(!intervalId){
+            intervalId = setInterval(function(){
+                document.body.style.backgroundColor = hexColor();
+        },1000)
+        }
+    })
+    stopper.addEventListener('click',(e)=>{
+        clearInterval(intervalId)
+        console.log('stopped')
+        intervalId = null;
+    })
+</script>
+</html>

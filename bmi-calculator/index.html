@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+</head>
+<style>
+    .container{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+
+    }
+</style>
+<body style="background-color: #212121; color:aliceblue",>
+    <div class="container">
+        <h1>BMI Calculator</h1>
+        <form action="">
+            <p><label>Height in cm:</label><input type="text" id="height"></p>
+            <p><label>Weight in kg:</label><input type="text" id="weight"></p>
+            <button>Calculate</button>
+        </form>
+        <span id="result"></span>
+        <div id="weight-guide">
+            <h3>BMI Weight Guide</h3>
+            <p>Under Weight = less than 18.5</p>
+            <p>Normal Weight = more than 18.5 and less than 24.5</p>
+            <p>OverWeight = more than 24.9</p>
+        </div>
+    </div>
+</body>
+<script>
+    const form = document.querySelector('form');
+    form.addEventListener('submit',(e)=>{
+        e.preventDefault()
+        const height = parseInt(document.querySelector('#height').value);
+        const weight = parseInt(document.querySelector('#weight').value);
+        const result = document.querySelector('#result');
+        if(height === '' || height < 0 || isNaN(height)){
+            result.innerHTML = `Please enter a valid height ${height}`
+        } else if(weight === '' || weight < 0 || isNaN(weight))
+        result.innerHTML = `Please enter a valid weight ${weight}`
+        else{
+            const bmi = ((weight/(height*height))*10000).toFixed(2);
+            if(bmi < 18.5){
+                result.innerHTML=`<span>${bmi}</span><br><p>Message: You r Under Weight</p>`;
+
+            }else if(bmi>24.5){
+                result.innerHTML=`<span>${bmi}</span><br><p>Message: You r over Weight</p>`;
+
+            }
+            else{
+                result.innerHTML=`<span>${bmi}</span><br><p>Message: You have Normal Weight</p>`;
+            }
+        }
+
+    })
+</script>
+</html>

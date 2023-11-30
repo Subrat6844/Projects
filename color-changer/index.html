@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Switcher</title>
+</head>
+<style>
+    .heading{
+        display: flex;
+        justify-content: center;
+    }
+    .container{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+
+    }
+    .container .button{
+        height: 150px;
+        width: 150px;
+        margin: .5rem;
+        border: .1rem solid black;
+    }
+    #gray{
+        background-color: gray;
+    }
+    #green{
+        background-color: green;
+    }
+    #yellow{
+        background-color: yellow;
+    }
+    #blue{
+        background-color: blue;
+    }
+    #red{
+        background-color: red;
+    }
+    #indigo{
+        background-color: indigo;
+    }
+    #violet{
+        background-color: violet;
+    }
+    #pink{
+        background-color: pink;
+    }
+    footer{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+</style>
+<body>
+    <div class="heading">
+        <h1>Color Switcher</h1> 
+
+    </div>
+    <div class="container">
+        <span class="button" id="gray"></span>
+        <span class="button" id="green"></span>
+        <span class="button" id="yellow"></span>
+        <span class="button" id="blue"></span>
+        <span class="button" id="indigo"></span>
+        <span class="button" id="red"></span>
+        <span class="button" id="pink"></span>
+        <span class="button" id="violet"></span>
+    </div>
+    <footer>
+        <h2>
+            click on boxes to change </h2>
+            <h2>the background-color of this page
+        </h2>
+    </footer>
+</body>
+<script>
+    const body = document.querySelector('body');
+    const btns = document.querySelectorAll('.button');
+    btns.forEach( (item)=> {
+        item.addEventListener('click',(e)=>{
+            const id = e.target.id;
+            body.style.backgroundColor = id;
+        })
+    })
+</script>
+</html>

@@ -1,0 +1,79 @@
+body{
+    
+    width: 100vw;
+    height: 100vh; 
+    background: linear-gradient(135deg,#cd7e7e,#000000);
+    background-repeat:no-repeat ;
+}
+.main{
+    padding-top: 10px;
+   text-align: center;
+   margin: auto;
+    width: 350px;
+    padding-bottom: 10px;
+    border-radius: 10px;
+    background: linear-gradient(135deg,#00feba,#5b548a);
+}
+.search-bar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+
+}
+
+.search-bar input{
+    
+    border: 0;
+    outline: 0;
+    flex: 1;
+    height: 40px;
+    border-radius: 20px;
+    margin: 5px;
+    background-color: #ebfffc;
+    color: #555;
+    padding: 0 20px;
+
+}
+.search-bar button{
+    border: 0;
+    outline: 0;
+    height: 40px;
+    margin-right: 5px;
+    background-color: #ebfffc;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.weather img{
+    margin-top: 10px;
+}
+.weather h1{
+    font-size: 50px;
+    font-weight: 500;
+    color: #ebfffc;
+}
+.weather h2{
+    font-size: 45px;
+    font-weight: 500;
+    color: #ebfffc;
+}
+.details{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.col{
+    display: flex;
+    text-align: left;
+    align-items: center;
+    color: #ebfffc;
+}
+.wind-speed ,.humidity{
+    font-size: 1.5rem;
+}
+.weather{
+    display: none;
+}
+.prompt{
+    display: none;
+}
