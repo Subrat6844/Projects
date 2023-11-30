@@ -4,74 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Text Writing</title>
-
+    <link rel="stylesheet" href="style.css">
 </head>
-<style>
-    body{
-        overflow: hidden;
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: #212121;
-    }
-    .main{
-        width: 300px;
-        overflow: hidden;
-    }
-    span{
-        color: aliceblue;
-        font-size: 40px;
-        font-weight: 500;
-        margin:3px;
-    }
-    .right{
-        color: #4071f4;
-        position: relative;
-    }
-    .right::before{
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0px;
-        width: 200px;
-        height: 45px;
-        border-left: 2px solid #4071f4;
-        background-color: #212121;
-        animation: animate 4s steps(12) infinite;
-    
-    }
-    @keyframes animate {
-        40%,60%{
-            left:calc(100% + 10px);
-        }
-        0%,100%{
-            
-            left: 0;
-        }
-    }
-</style>
 <body>
     <div class="main">
         <span class="left">I'm a</span>
         <span class="right"></span>
     </div>
 </body>
-<script>
-    const text = document.querySelector(".right");
-    function changeText(){
-        setTimeout(()=>{
-            text.textContent="Coder"
-        },0)
-        setTimeout(()=>{
-            text.textContent="Freelancer"
-        },4000)
-        setTimeout(()=>{
-            text.textContent="Ninja"
-        },8000)
-        
-    }
-    changeText()
-    setInterval(changeText,12000)
-</script>
+<script src="script.js"></script>
 </html>
